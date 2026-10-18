@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation Tests</title>
+    <style>
+    body { font-family: monospace; padding: 20px; line-height: 1.5; }
+    .pass { color: green; font-weight: bold; }
+    .fail { color: red; font-weight: bold; }
+  </style>
+</head>
+<body>
+    <h1>Validation Test Logs</h1>
+    <pre id="log-output"></pre>
+    
+    <script type="module">
+        import { validateField } from './scripts/validators.js';
+
+        const logBox = document.getElementById('log-output');
+
+        function runTest(fieldName, input, expectedValid, label) {
+            const result= validateField(fieldName, input);
+            const passed = result.isValid === expectedValid;
+
+            if(passed) {
+                logBox.innerHTML += `<span class="pass">[PASS]</span> ${label} (${fieldName}: "${input}")\n`;
+            }  else {
+                logBox.innerHTML += `<span class="fail">[FAIL]</span> ${label} (${fieldName}: "${input}")\n`;
+                logBox.innerHTML += `       ↳ Error: "${result.errorMsg}"\n\n`;
+            }
+        }
+
+        //check description
+        runTest('description', 'Cafeteria Lunch', true, 'Valid description');
+        runTest('description', ' Lunch', false, 'Fails on leading space');
+        runTest('description', 'Chemistry Books Books', false, 'Fails on duplicate words');
+
+        //check amount
+        runtest('amount', '12.50', true, 'Valid decimal number');
+        runtest('amount', '-5.00', false, 'Fails on negative number');
+
+        //check date
+        runtest('date', '2025-09-29', true, 'Valid calendar date');
+        runtest('date', '2025-02-31', false, 'Fails on non-existent calendar date');
+
+        //check catergory
+        runTest('category', 'Food', true, 'Valid category name');
+        runTest('category', 'Fees123', false, 'Fails on numbers in category');
+    </script>
+</body>
+</html>
