@@ -1,0 +1,99 @@
+{
+    "records": [
+        {
+            "id":"rec_0001",
+            "description": "Tuition fees deposit",
+            "amount": 150000.00,
+            "category": "Fees",
+            "date": "2025-09-01",
+            "createdAt": "2025-09-01T08:00:00:000Z",
+            "updatedAt": "2025-09-01TO8:00:00:000Z"
+        },
+        {
+            "id": "rec_0002",
+            "description": "Python course textbook",
+            "amount": 35000.00,
+            "category": "Books",
+            "date": "2025-09-05",
+            "createdAt": "2025-09-05T10:15:00.000Z",
+            "updatedAt": "2025-09-09T10:15:00:000Z"
+        },
+        {
+            "id": "rec_0003",
+            "description": "Month bus pass",
+            "amount": 12000.00,
+            "category": "Transport",
+            "date": "2025-09-10",
+            "createdAt": "2025-09-10T14:20:00.000Z",
+            "updatedAt": "2025-09-10T14:20:00.000Z"
+        },
+        {
+            "id": "rec_0004",
+            "description": "Lunch at main cafeteria",
+            "amount": 2500.00,
+            "category": "Food",
+            "date": "2025-09-25",
+            "createdAt": "2025-09-25T12:30.00.000Z",
+            "updatedAt": "2025-09-25T12:30:00.000Z"
+        },
+        {
+            "id": "rec_0005",
+            "description": "Movie night ticket",
+            "amount": 5000.00,
+            "category": "Entertainment",
+            "date": "2025-09-26",
+            "createdAt": "2025-09-26T19:00.000Z",
+            "updatedAt": "2025-09-26T19:00:000Z"
+        }, 
+        {
+            "id": "rec_0006", 
+            "description": "Notebooks and pens",
+            "amount": 4500.00,
+            "category": "Books",
+            "date": "2025-09-27",
+            "createdAt": "2025-09-27T09:11.00.000Z",
+            "updatedAt": "2025-09-27T09:11.00.000Z"
+        }, 
+        {
+            "id": "rec_0007",
+            "description": "Loaded Fries",
+            "amount": 1800.00,
+            "category": "Food",
+            "date": "2025-09-28",
+            "createdAt": "2025-09-28T16:45:00.000Z",
+            "updatedAt": "2025-09-28T16:45:00.000Z"
+        }, 
+        {
+            "id": "rec_0008",
+            "description": "Late submission library fee",
+            "amount": 1500.00,
+            "category": "Fees",
+            "date": "2025-09-29",
+            "createdAt": "2025-09-29T11:00:00:000Z",
+            "updatedAt": "2025-09-29T11:00:00:000Z"
+        },
+        {
+            "id": "rec_0009",
+            "description": "Moto ride to hostel",
+            "amount": 1000.00,
+            "category": "Transport",
+            "date": "2025-09-29",
+            "createdAt": "2025-09-29T21:30:00.000Z",
+            "updatedAt": "2025-09-29T21:30:00.000Z"
+        },
+        {
+            "id": "rec_0010",
+            "description": "Room utility token",
+            "amount": 3000.00,
+            "category": "Other",
+            "date": "2025-09-30",
+            "createdAt": "2025-09-30T10:00:00:000Z",
+            "updatedAt": "2025-09-30T10:00:00:000Z"
+        }
+    ],
+    "budgetCap": 300000,
+    "rates": {
+        "KES": 0.11,
+        "UGX": 2.85
+    }
+}
