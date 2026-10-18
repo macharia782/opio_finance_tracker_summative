@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opio Student Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div>
+      id="aria-assertive-announcer" class="sr-only" aria-live="assertive"
+      role="alert"
+    </div>
+    <div>
+      id="aria-polite-announcer" class="sr-only" aria-live="polite"
+      role="status"
+    </div>
+
+    <header>
+      <h1>Opio<span>Finance</span></h1>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#add-expense">Add Expense</a></li>
+          <li><a href="#records">Records</a></li>
+          <li><a href="#settings">Settings</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <!--Dashboard-->
+      <section id="dashboard" aria-labelledby="dash-title">
+        <h2 id="dash-title">Dashboard</h2>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>
+              Total Spent (<span class="active-currency-label">RWF</span>)
+            </h3>
+            <div id="stat-total-spent" class="stat-value">0.00</div>
+          </div>
+          <div class="stat-card">
+            <h3>Budget Cap</h3>
+            <div id="stat-budget-cap" class="stat-value">Not set</div>
+          </div>
+          <div class="stat-card">
+            <h3>Top Category</h3>
+            <div id="stat-top-category" class="stat-value">-</div>
+          </div>
+        </div>
+
+        <div class="cap-progress-container">
+          <div class="cap-header-row">
+            <span>Budget Usage Limit</span>
+            <span id="" budget-live-status role="status" aria-live="polite"
+              >Set limit below · 0%</span
+            >
+          </div>
+          <div class="progress-bar-rail">
+            <div
+              id="budget-progress-fill"
+              class="progress-bar-fill"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
+
+        <div class="chart-outer-container" style="margin-top: 1.5rem">
+          <h3>Last 7 days Spending Trend</h3>
+          <div id="chart-pillar-row" class="trend-chart-canvas"></div>
+        </div>
+      </section>
+
+      <aside class="sidebar-controls" aria-label="Expense Controls">
+        <section id="add-expense" aria-label="add-expense-heading">
+          <h2 id="add-expense-heading">Add New Expense</h2>
+
+          <form id="expense-form" novalidate>
+            <div class="form-group">
+              <label for="expense-desc">Description</label>
+              <span id="desc-hint" class="sr-only"
+                >Forbid leading/trailing spaces and dupicate words.</span
+              >
+              <input
+                type="text"
+                id="expense-desc"
+                name="description"
+                required
+                aria-describedby="desc-hint expense-desc-error"
+                autocomplete="off"
+              />
+              <div
+                id="expense-desc-error"
+                class="field-error-msg"
+                role="alert"
+                aria-live="assertive"
+              ></div>
+            </div>
+
+            <div class="form-group">
+              <label for="expense-amount">Amount (RWF)</label>
+              <input
+                type="number"
+                id="expense-amount"
+                name="amount"
+                step="0.01"
+                min="0.01"
+                required
+                aria-describedby="expense-amount-error"
+                placeholder="0.00"
+              />
+              <div
+                id="expense-amount-error class="
+                field-error-msg
+                role="alert"
+                aria-live="assertive"
+              ></div>
+
+              <div class="form-group">
+                <label for="expense-category">Category</label>
+                <select
+                  id="expense-category"
+                  name="category"
+                  required
+                  aria-describedby="expense-category-error"
+                >
+                  <option value="" disabled selected>
+                    Select a category...
+                  </option>
+                  <option value="Food">Food</option>
+                  <option value="Transport">Transport</option>
+                  <option value="Entertainment">\Entertainment</option>
+                  <option value="Fees">Fees</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div
+                  id="expense-category-error"
+                  class="field-error-msg"
+                  role="alert"
+                  aria-live="assertive"
+                ></div>
+              </div>
+
+              <div class="form-group">
+                <label for="" expense-date>Date</label>
+                <input
+                  type="date"
+                  id="expense-date"
+                  name="date"
+                  required
+                  ari-describedby="expense-date-error"
+                  value=""
+                  2025-09-29
+                />
+                <div
+                  id="expense-date-error"
+                  class="field-error-msg"
+                  field-error-msg
+                  role="alert"
+                  aria-live="assertive"
+                ></div>
+              </div>
+
+              <div class="form-actions-row">
+                <button type="submit" id="btn-save">Save Expense</button>
+                <button type="button" id="btn-cancel" class="btn-secondary">
+                  Cancel Edit
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <section id="settings" aria-labelledby="settings-title">
+          <h2 id="settings-title">Settings</h2>
+
+          <div class="form-group">
+            <label for="txt-budget-cap"
+              >Set Budget Cap (<span class="active-currency-label">RWF</span
+              >)</label
+            >
+            <input
+              type="number"
+              id="txt-budget-cap"
+              placeholder="Enter target budget capacity"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="select-currency">View Currency Base</label>
+            <select id="select-currency">
+              <option value="RWF">RWF (Base)</option>
+              <option value="KES">KES</option>
+              <option value="UGX">UGX</option>
+            </select>
+          </div>
+
+          <div class="currency-rates-matrix" style="margin-top: 1rem">
+            <h3>Manual Exchange Conversions (Per 1 Base Unit)</h3>
+            <div class="rates-grid-inputs">
+              <div class="form-group">
+                <label for="" rate-rwf-kes>1 RWF to KES</label>
+                <input
+                  type="number"
+                  id="rate-rwf-kes"
+                  step="0.00001"
+                  value="0.11"
+                />
+              </div>
+              <div class="form-group">
+                <label for="rate-rwf-ugx">1 RWF to UGX</label>
+                <input
+                  type="number"
+                  id="rate-rwf-ugx"
+                  step="0.00001"
+                  value="2.85"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="backup-io-deck">
+            <h3>JSON Configuration Operations</h3>
+            <div class="io-button-group">
+              <button type="button" id="btn-export-json" class="btn-accent">
+                Export Ledger JSON
+              </button>
+              <label
+                id="lbl-import-json"
+                class="btn-custom-upload"
+                for="file-import-json"
+                tabindex="0"
+                role="button"
+              >
+                Import Ledger JSON
+              </label>
+              <input
+                type="file"
+                id="file-import-json"
+                accept=".json"
+                class="sr-only"
+              />
+            </div>
+            <span class="field-error-msg" id="io-status-msg" aria-live="polite">
+            </span>
+          </div>
+        </section>
+      </aside>
+
+      <section id="records" aria-labelledby="records-title">
+        <h2 id="records-title">Records Ledger</h2>
+        <div class="controls">
+          <div class="search-group">
+            <label for="txt-search">Live Regex Search</label>
+            <input
+              type="text"
+              id="txt-search"
+              placeholder="Filter records (e.g. coffee|books)..."
+            />
+          </div>
+
+          <div
+            class="form-group"
+            style="
+              flex-direction: row;
+              align-items: center;
+              gap: 8px;
+              margin-bottom: 0;">
+            <input type="checkbox" id="chk-case-insensitive checked"/>
+            <label for="chk-case-insensitive" style="margin-bottom: 0"
+              >Ignore Case (/i)</label>
+          </div>
+
+          <div class="sort-actions">
+            <button type="button" id="sort-date">Sort by Date</button>
+            <button type="button" id="sort-desc">Sort A-Z</button>
+            <button type="button" id="sort-button">Sort Amount</button>
+          </div>
+        </div>
+
+        <div class="records-data-grid" id="ledger-rows-target">
+          <div class="empty-state-card">
+            No transactions logged yet. Add your daily expenses to populate the tracker ledger.
+          </div>
+        </div>
+      </section>
+
+      <section id="about" aria-labelledby="about-title">
+        <h2  id="about-title">About This Project</h2>
+        <p class="about-description">
+          <strong>Opio</strong> is a responsove, accessible, vanilla HTML/CSS/JS web application designed to help students track their budgets and daily expenses.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-socials">
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub Profile"
+        >
+      </div>
+    </footer>
+  </body>
+</html>
