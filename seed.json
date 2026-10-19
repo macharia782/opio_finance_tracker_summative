@@ -6,8 +6,8 @@
             "amount": 150000.00,
             "category": "Fees",
             "date": "2025-09-01",
-            "createdAt": "2025-09-01T08:00:00:000Z",
-            "updatedAt": "2025-09-01TO8:00:00:000Z"
+            "createdAt": "2025-09-01T08:00:00.000Z",
+            "updatedAt": "2025-09-01T08:00:00.000Z"
         },
         {
             "id": "rec_0002",
@@ -16,7 +16,7 @@
             "category": "Books",
             "date": "2025-09-05",
             "createdAt": "2025-09-05T10:15:00.000Z",
-            "updatedAt": "2025-09-09T10:15:00:000Z"
+            "updatedAt": "2025-09-09T10:15:00.000Z"
         },
         {
             "id": "rec_0003",
@@ -43,7 +43,7 @@
             "category": "Entertainment",
             "date": "2025-09-26",
             "createdAt": "2025-09-26T19:00.000Z",
-            "updatedAt": "2025-09-26T19:00:000Z"
+            "updatedAt": "2025-09-26T19:00.000Z"
         }, 
         {
             "id": "rec_0006", 
@@ -69,8 +69,8 @@
             "amount": 1500.00,
             "category": "Fees",
             "date": "2025-09-29",
-            "createdAt": "2025-09-29T11:00:00:000Z",
-            "updatedAt": "2025-09-29T11:00:00:000Z"
+            "createdAt": "2025-09-29T11:00:00.000Z",
+            "updatedAt": "2025-09-29T11:00:00.000Z"
         },
         {
             "id": "rec_0009",
@@ -87,8 +87,8 @@
             "amount": 3000.00,
             "category": "Other",
             "date": "2025-09-30",
-            "createdAt": "2025-09-30T10:00:00:000Z",
-            "updatedAt": "2025-09-30T10:00:00:000Z"
+            "createdAt": "2025-09-30T10:00:00.000Z",
+            "updatedAt": "2025-09-30T10:00:00.000Z"
         }
     ],
     "budgetCap": 300000,

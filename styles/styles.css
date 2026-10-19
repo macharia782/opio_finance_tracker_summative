@@ -79,7 +79,7 @@ header h1 span {
     margin-top: 10px;
 }
 
-.nav0-links a {
+.nav-links a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: bold;
@@ -104,7 +104,7 @@ section {
     margin-bottom: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    transition: transition var(--transition-speed) ease;
+    transition: transform var(--transition-speed) ease;
 }
 
 section:hover {
@@ -166,8 +166,7 @@ button {
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
-    transition: opacity var(--transition-speed) ease,
-    background-color var(--transition-speed) ease;
+    transition: opacity var(--transition-speed) ease, background-color var(--transition-speed) ease;
 }
 
 button:hover {
@@ -194,9 +193,10 @@ button:hover {
 }
 
 .stat-card h3 {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--text-color);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 4px;
 }
 
 .stat-value {
@@ -255,7 +255,7 @@ footer {
     margin-top: 2px;
 }
 
-.footer-social a {
+.footer-socials a {
     color: var(--text-color);
     text-decoration: none;
     font-size: 1.25rem;
@@ -298,7 +298,7 @@ footer {
 }
 
 .chart-outer-container h3 {
-    font-size: 0.85 rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     margin-bottom: 10px;
     color: #555;
@@ -318,8 +318,11 @@ footer {
 .chart-bar-pillar {
     background: var(--primary-color);
     width: 30px;
-    border: 1px sollid var(--text-color);
-    
+    border: 1px solid var(--text-color);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    position: relative;
+    transition: height 0.3 ease;
 }
 
 .chart-bar-pillar:hover {
@@ -339,7 +342,7 @@ footer {
 
 .rates-grid-inputs {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
     margin-top: 5px;
 }
@@ -349,19 +352,26 @@ footer {
     width: 100%
 }
 
-.backup-io-deck {
-    margin-top: 1.5rem;
-    border-top: 1px dashed var(--text-color);
-    padding-top: 1rem;
+.rates-grid-inputs input {
+    width: 100;
+    min-width:0;
+    box-sizing: border-box;
 }
 
-.backup-io-deck h3 {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-}
 
-.io-buttom-group {
-    display: grip;
+   .backup-io-deck {
+      margin-top: 1.5rem;
+      border-top: 1px dashed var(--text-color);
+      padding-top: 1rem;
+    }
+
+    .backup-io-deck h3 {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+.io-button-group {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     width: 100%;

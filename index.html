@@ -8,19 +8,23 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <div>
-      id="aria-assertive-announcer" class="sr-only" aria-live="assertive"
+    <div
+      id="aria-assertive-announcer"
+      class="sr-only"
+      aria-live="assertive"
       role="alert"
-    </div>
-    <div>
-      id="aria-polite-announcer" class="sr-only" aria-live="polite"
+    ></div>
+    <div
+      id="aria-polite-announcer"
+      class="sr-only"
+      aria-live="polite"
       role="status"
-    </div>
+    ></div>
 
     <header>
       <h1>Opio<span>Finance</span></h1>
@@ -60,7 +64,7 @@
         <div class="cap-progress-container">
           <div class="cap-header-row">
             <span>Budget Usage Limit</span>
-            <span id="" budget-live-status role="status" aria-live="polite"
+            <span id="budget-live-status" role="status" aria-live="polite"
               >Set limit below · 0%</span
             >
           </div>
@@ -80,7 +84,7 @@
       </section>
 
       <aside class="sidebar-controls" aria-label="Expense Controls">
-        <section id="add-expense" aria-label="add-expense-heading">
+        <section id="add-expense" aria-labelledby="add-expense-heading">
           <h2 id="add-expense-heading">Add New Expense</h2>
 
           <form id="expense-form" novalidate>
@@ -118,63 +122,62 @@
                 placeholder="0.00"
               />
               <div
-                id="expense-amount-error class="
-                field-error-msg
+                id="expense-amount-error"
+                class="field-error-msg"
                 role="alert"
                 aria-live="assertive"
               ></div>
+            </div>
 
-              <div class="form-group">
-                <label for="expense-category">Category</label>
-                <select
-                  id="expense-category"
-                  name="category"
-                  required
-                  aria-describedby="expense-category-error"
+
+            <div class="form-group">
+              <label for="expense-category">Category</label>
+              <select
+                id="expense-category"
+                name="category"
+                required
+                aria-describedby="expense-category-error"
                 >
-                  <option value="" disabled selected>
-                    Select a category...
-                  </option>
-                  <option value="Food">Food</option>
-                  <option value="Transport">Transport</option>
-                  <option value="Entertainment">\Entertainment</option>
-                  <option value="Fees">Fees</option>
-                  <option value="Other">Other</option>
-                </select>
-                <div
-                  id="expense-category-error"
-                  class="field-error-msg"
-                  role="alert"
-                  aria-live="assertive"
-                ></div>
-              </div>
+                <option value="" disabled selected>
+                  Select a category...
+                </option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Fees">Fees</option>
+                <option value="Other">Other</option>
+              </select>
+              <div
+                id="expense-category-error"
+                class="field-error-msg"
+                role="alert"
+                aria-live="assertive"
+              ></div>
+            </div>
 
-              <div class="form-group">
-                <label for="" expense-date>Date</label>
-                <input
-                  type="date"
-                  id="expense-date"
-                  name="date"
-                  required
-                  ari-describedby="expense-date-error"
-                  value=""
-                  2025-09-29
-                />
-                <div
-                  id="expense-date-error"
-                  class="field-error-msg"
-                  field-error-msg
-                  role="alert"
-                  aria-live="assertive"
-                ></div>
-              </div>
+            <div class="form-group">
+              <label for="expense-date">Date</label>
+              <input
+                type="date"
+                id="expense-date"
+                name="date"
+                required
+                aria-describedby="expense-date-error"
+                value="2025-09-29"
+              />
+              <div
+                id="expense-date-error"
+                class="field-error-msg"
+                role="alert"
+                aria-live="assertive"
+              ></div>
+            </div>
 
-              <div class="form-actions-row">
-                <button type="submit" id="btn-save">Save Expense</button>
-                <button type="button" id="btn-cancel" class="btn-secondary">
-                  Cancel Edit
-                </button>
-              </div>
+            <div class="form-actions-row">
+              <button type="submit" id="btn-save">Save Expense</button>
+              <button type="button" id="btn-cancel" class="btn-secondary">
+                Cancel Edit
+              </button>
             </div>
           </form>
         </section>
@@ -207,7 +210,7 @@
             <h3>Manual Exchange Conversions (Per 1 Base Unit)</h3>
             <div class="rates-grid-inputs">
               <div class="form-group">
-                <label for="" rate-rwf-kes>1 RWF to KES</label>
+                <label for="rate-rwf-kes">1 RWF to KES</label>
                 <input
                   type="number"
                   id="rate-rwf-kes"
@@ -239,9 +242,8 @@
                 for="file-import-json"
                 tabindex="0"
                 role="button"
+                >Import Ledger JSON</label
               >
-                Import Ledger JSON
-              </label>
               <input
                 type="file"
                 id="file-import-json"
@@ -257,6 +259,7 @@
 
       <section id="records" aria-labelledby="records-title">
         <h2 id="records-title">Records Ledger</h2>
+
         <div class="controls">
           <div class="search-group">
             <label for="txt-search">Live Regex Search</label>
@@ -273,30 +276,38 @@
               flex-direction: row;
               align-items: center;
               gap: 8px;
-              margin-bottom: 0;">
-            <input type="checkbox" id="chk-case-insensitive checked"/>
+              margin-bottom: 0;
+            "
+          >
+            <input type="checkbox" id="chk-case-insensitive" checked />
             <label for="chk-case-insensitive" style="margin-bottom: 0"
-              >Ignore Case (/i)</label>
+              >Ignore Case (/i)</label
+            >
           </div>
 
           <div class="sort-actions">
             <button type="button" id="sort-date">Sort by Date</button>
             <button type="button" id="sort-desc">Sort A-Z</button>
-            <button type="button" id="sort-button">Sort Amount</button>
+            <button type="button" id="sort-amount">Sort Amount</button>
           </div>
         </div>
 
         <div class="records-data-grid" id="ledger-rows-target">
           <div class="empty-state-card">
-            No transactions logged yet. Add your daily expenses to populate the tracker ledger.
+            No transactions logged yet. Add your daily expenses to populate the
+            tracker ledger.
           </div>
         </div>
       </section>
 
       <section id="about" aria-labelledby="about-title">
-        <h2  id="about-title">About This Project</h2>
+        <h2 id="about-title">About This Project</h2>
         <p class="about-description">
-          <strong>Opio</strong> is a responsove, accessible, vanilla HTML/CSS/JS web application designed to help students track their budgets and daily expenses.
+          <strong>Opio</strong> is a responsive, accessible, vanilla HTML/CSS/JS
+          web application designed to help students track their budgets and
+          daily expenses. It features live regex search, form validation,JSON
+          import/export, and manual multi-currency support for East Africa (RWF,
+          KES, UGX).
         </p>
       </section>
     </main>
@@ -304,12 +315,15 @@
     <footer>
       <div class="footer-socials">
         <a
-          href="https://github.com"
+          href="https://github.com/macharia782/opio_finance_tracker_summative"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="GitHub Profile"
+          aria-label="GitHub Repository"
         >
+          <i class="fa-brands fa-github fa-lg"></i>
+        </a>
       </div>
     </footer>
+    <script type="module" src="scripts/ui.js"></script>
   </body>
 </html>

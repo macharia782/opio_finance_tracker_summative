@@ -22,7 +22,7 @@
             const result= validateField(fieldName, input);
             const passed = result.isValid === expectedValid;
 
-            if(passed) {
+            if (passed) {
                 logBox.innerHTML += `<span class="pass">[PASS]</span> ${label} (${fieldName}: "${input}")\n`;
             }  else {
                 logBox.innerHTML += `<span class="fail">[FAIL]</span> ${label} (${fieldName}: "${input}")\n`;
@@ -36,16 +36,17 @@
         runTest('description', 'Chemistry Books Books', false, 'Fails on duplicate words');
 
         //check amount
-        runtest('amount', '12.50', true, 'Valid decimal number');
-        runtest('amount', '-5.00', false, 'Fails on negative number');
+        runTest('amount', '12.50', true, 'Valid decimal number');
+        runTest('amount', '-5.00', false, 'Fails on negative number');
 
         //check date
-        runtest('date', '2025-09-29', true, 'Valid calendar date');
-        runtest('date', '2025-02-31', false, 'Fails on non-existent calendar date');
+        runTest('date', '2025-09-29', true, 'Valid calendar date');
+        runTest('date', '2025-02-31', false, 'Fails on non-existent calendar date');
 
         //check catergory
         runTest('category', 'Food', true, 'Valid category name');
         runTest('category', 'Fees123', false, 'Fails on numbers in category');
+
     </script>
 </body>
 </html>

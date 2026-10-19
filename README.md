@@ -2,9 +2,9 @@
 A responsive and accessible application to help students track their daily expenses, monitor budget allocations, and perform live transaction analysis using regular expressions.
 
 ## Project Links
-- **GitHub Pages Live App**: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`
+- **GitHub Pages Live App**: `https://macharia782.github.io/opio_finance_tracker_summative/`
 - **Wireframe Design Assets (Google Drive)**: `https://drive.google.com/file/d/1yh6BJuxJ2skHHgGI5suQrBxHHFJwvNH4/view?usp=sharing`
-- **Unlisted Demo Video**: `https://drive.google.com/file/d/1yh6BJuxJ2skHHgGI5suQrBxHHFJwvNH4/view?usp=sharing`
+- **Demo Video**: `https://www.youtube.com/watch?v=gyOT4wFaJGM`
 
 ---
 
